@@ -1,0 +1,35 @@
+{
+  "name": "CUgpa_Django_React",
+  "version": "1.0.0",
+  "description": "This is a fullstack Django-redux-react application with django-rest-knox used for token based authentication. This GPA calculator is based on the 12 point system used at Carleton University.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./CUgpa/frontend/src/index.js --output ./CUgpa/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./CUgpa/frontend/src/index.js --output ./CUgpa/frontend/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbayomiE-T/CUgpa_Django_React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbayomiE-T/CUgpa_Django_React/issues"
+  },
+  "homepage": "https://github.com/AbayomiE-T/CUgpa_Django_React#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
