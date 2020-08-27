@@ -26,6 +26,13 @@ export class Form extends Component {
         const course = { courseName, courseCode, creditValue, grade, gradePoint }
 
         this.props.addCourse(course)
+        this.setState({
+            courseName: '',
+            courseCode: '',
+            creditValue: '',
+            grade: '',
+            gradePoint: ''
+        })
     }
 
     render() {
