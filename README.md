@@ -5,7 +5,7 @@ This is a fullstack Django-redux-react application with django-rest-knox used fo
 # Before starting the program
 run "npm install" in the root directory to install the dependencies
 
-#Make sure you're in the pip virtual environment
+# Make sure you're in the pip virtual environment
 run "pipenv shell"
 
 # To serve the API
