@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <Fragment>
                 <Navbar />
-                <div className="container">
+                <div className="container mb-3">
                     <Dashboard />
                 </div>
             </Fragment>
