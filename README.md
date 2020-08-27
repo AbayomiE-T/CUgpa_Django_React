@@ -12,5 +12,5 @@ run "pipenv shell"
 run "python CUgpa/manage.py runserver
 
 # Run webpack from the root directory as well
-npm run dev
+run "npm run dev"
 
