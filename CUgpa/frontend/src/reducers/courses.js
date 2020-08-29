@@ -1,7 +1,8 @@
-import { GET_COURSES, DELETE_COURSE, ADD_COURSE } from "../actions/types.js"
+import { GET_COURSES, DELETE_COURSE, ADD_COURSE, CALCULATE_GPA } from "../actions/types.js"
 
 const initialState = {
-    courses: []
+    courses: [],
+    gpa: 0
 }
 
 export default function (state = initialState, action) {
@@ -20,6 +21,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 courses: [...state.courses, action.payload]
+            }
+        case CALCULATE_GPA:
+            return {
+                ...state,
+                gpa: action.payload
             }
         default:
             return state
