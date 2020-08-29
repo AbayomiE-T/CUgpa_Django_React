@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { createMessage, returnErrors } from './messages'
+import { tokenConfig } from './auth'
 
 import { GET_COURSES, DELETE_COURSE, ADD_COURSE } from './types'
 
 //GET COURSES
-export const getCourses = () => dispatch => {
-    axios.get('api/courses/')
+export const getCourses = () => (dispatch, getState) => {
+    axios.get('api/courses/', tokenConfig(getState))
         .then(res => {
             dispatch({
                 type: GET_COURSES,
@@ -15,8 +16,8 @@ export const getCourses = () => dispatch => {
 }
 
 //DELETE COURSE
-export const deleteCourse = (id) => dispatch => {
-    axios.delete(`api/courses/${id}/`)
+export const deleteCourse = (id) => (dispatch, getState) => {
+    axios.delete(`api/courses/${id}/`, tokenConfig(getState))
         .then(res => {
             dispatch(createMessage({ deleteCourse: "Course Deleted" }))
             dispatch({
@@ -27,8 +28,8 @@ export const deleteCourse = (id) => dispatch => {
 }
 
 //ADD COURSE
-export const addCourse = (course) => dispatch => {
-    axios.post("api/courses/", course)
+export const addCourse = (course) => (dispatch, getState) => {
+    axios.post("api/courses/", course, tokenConfig(getState))
         .then(res => {
             dispatch(createMessage({ addCourse: "Course Added" }))
             dispatch({

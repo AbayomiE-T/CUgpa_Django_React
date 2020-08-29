@@ -31,6 +31,10 @@ export class Alerts extends Component {
             if (error.msg.gradePoint) {
                 alert.error(`Grade Point: ${error.msg.gradePoint.join()}`)
             }
+            if (error.msg.non_field_errors) {
+                alert.error(`${error.msg.non_field_errors.join()}`)
+            }
+            if (error.msg.username) alert.error(error.msg.username.join());
         }
 
         if (message !== prevProps.message) {
@@ -39,6 +43,9 @@ export class Alerts extends Component {
             }
             if (message.addCourse) {
                 alert.success(message.addCourse)
+            }
+            if (message.passwordNotMatch) {
+                alert.error(message.passwordNotMatch)
             }
         }
     }
@@ -49,6 +56,8 @@ export class Alerts extends Component {
         )
     }
 }
+
+
 
 const mapStateToProps = state => ({
     error: state.errors,
